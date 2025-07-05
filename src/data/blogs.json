@@ -1,1 +1,20 @@
-
+[
+  {
+    "id": 1,
+    "title": "5 tips to keep your smile healthy",
+    "content": "Brushing twice a day is key. Regular dental visits are a must...",
+    "thumbnail": "blog1-thumb.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Dental implants: Are they right for you?",
+    "content": "Implants provide a permanent solution for missing teeth. Here’s what you need to know...",
+    "thumbnail": "blog2-thumb.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Family dentistry explained",
+    "content": "We’re equipped to treat all ages with a gentle touch. Our family dentistry services cover...",
+    "thumbnail": "blog3-thumb.jpg"
+  }
+]
