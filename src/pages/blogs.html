@@ -1,15 +1,25 @@
+<!-- src/pages/blogs.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Blogs | Vijaya Lakshmi Dental Clinic</title>
-    <link rel="stylesheet" href="../styles/main.css"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
-    <div class="navbar">
-        <!-- Navbar code as in index.html -->
-    </div>
+    <nav class="navbar">
+        <div class="logo">Vijaya Lakshmi</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#doctor">Doctor</a></li>
+            <li><a href="blogs.html" class="active">Blogs</a></li>
+            <li><a href="book.html">Book</a></li>
+        </ul>
+    </nav>
     <section style="max-width:900px; margin:36px auto; min-height:320px;">
-        <h2 style="margin-left:14px;">Our Latest Blogs</h2>
+        <h2 style="margin-left:14px;margin-bottom:22px;">Our Latest Blogs</h2>
         <div id="blogs-list" style="display:flex; flex-direction:column;gap:18px;">
             <!-- JS injects blog tiles here -->
         </div>
@@ -17,6 +27,7 @@
     <div id="book-float-btn" onclick="window.location.href='book.html'" title="Book Appointment">
         <span>🗓️</span>
     </div>
+    <script src="../scripts/main.js"></script>
     <script>
     // Fetch blogs and render cards
     fetch('../data/blogs.json')
@@ -26,10 +37,25 @@
         blogs.forEach(blog=>{
             let tile=document.createElement('div');
             tile.className='blog-main-tile';
-            tile.style='display:flex; align-items:center; box-shadow:0 2px 8px rgba(121,59,156,0.07); margin-bottom:18px; transition: box-shadow 0.2s; cursor:pointer;';
+            tile.style.display = 'flex';
+            tile.style.alignItems = 'center';
+            tile.style.boxShadow = '0 2px 8px rgba(121,59,156,0.07)';
+            tile.style.cursor = 'pointer';
             tile.onmouseover=()=>tile.style.boxShadow='0 8px 26px rgba(121,59,156,0.15)';
             tile.onmouseout=()=>tile.style.boxShadow='0 2px 8px rgba(121,59,156,0.07)';
-            tile.onclick=()=>alert(blog.title+'\n\n'+blog.content); // TODO: replace with full blog page
             tile.innerHTML=`
-                <div style="flex:6; padding:24px 20px;text-align:left">
-                  <h3 style="margin:0;color:rgb(121,59,
+                <div style="flex:6; padding:20px 20px;">
+                  <h3 style="margin:0;color:rgb(121,59,156);">${blog.title}</h3>
+                  <p style="margin-bottom:0;font-size:1.05rem;color:#444;">${blog.content.split(' ').slice(0, 16).join(' ')}...</p>
+                </div>
+                <div style="flex:2;display:flex;justify-content:center;">
+                    <img src="../../public/blogs/${blog.thumbnail}" alt="${blog.title}" style="width:90px;height:90px;object-fit:cover;border-radius:10px;">
+                </div>
+            `;
+            tile.onclick=()=>alert(`${blog.title}\n\n${blog.content}`);
+            container.appendChild(tile);
+        });
+      });
+    </script>
+</body>
+</html>
