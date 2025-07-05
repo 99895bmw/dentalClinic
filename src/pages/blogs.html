@@ -1,1 +1,35 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blogs | Vijaya Lakshmi Dental Clinic</title>
+    <link rel="stylesheet" href="../styles/main.css"/>
+</head>
+<body>
+    <div class="navbar">
+        <!-- Navbar code as in index.html -->
+    </div>
+    <section style="max-width:900px; margin:36px auto; min-height:320px;">
+        <h2 style="margin-left:14px;">Our Latest Blogs</h2>
+        <div id="blogs-list" style="display:flex; flex-direction:column;gap:18px;">
+            <!-- JS injects blog tiles here -->
+        </div>
+    </section>
+    <div id="book-float-btn" onclick="window.location.href='book.html'" title="Book Appointment">
+        <span>🗓️</span>
+    </div>
+    <script>
+    // Fetch blogs and render cards
+    fetch('../data/blogs.json')
+      .then(res=>res.json())
+      .then(blogs=>{
+        let container = document.getElementById('blogs-list');
+        blogs.forEach(blog=>{
+            let tile=document.createElement('div');
+            tile.className='blog-main-tile';
+            tile.style='display:flex; align-items:center; box-shadow:0 2px 8px rgba(121,59,156,0.07); margin-bottom:18px; transition: box-shadow 0.2s; cursor:pointer;';
+            tile.onmouseover=()=>tile.style.boxShadow='0 8px 26px rgba(121,59,156,0.15)';
+            tile.onmouseout=()=>tile.style.boxShadow='0 2px 8px rgba(121,59,156,0.07)';
+            tile.onclick=()=>alert(blog.title+'\n\n'+blog.content); // TODO: replace with full blog page
+            tile.innerHTML=`
+                <div style="flex:6; padding:24px 20px;text-align:left">
+                  <h3 style="margin:0;color:rgb(121,59,
