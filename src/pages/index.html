@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijaya Lakshmi Dental Clinic</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../../public/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Scrolling Text Bar -->
+    <div id="scroller-bar"></div>
 
+    <!-- Address and Phone -->
+    <div class="top-contact">
+        <span>🏥 Ameerpet, Hyderabad | 📞 +91 9876543210</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Vijaya Lakshmi</div>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#doctor" id="nav-doctor">Doctor</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="book.html">Book</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Gallery (Auto-sliding) -->
+    <section class="main-gallery">
+        <div class="slider" id="main-slider">
+            <img src="../../public/images/gallery1.jpg" alt="Clinic Gallery 1"/>
+            <img src="../../public/images/gallery2.jpg" alt="Clinic Gallery 2"/>
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+
+    <!-- Doctor Section -->
+    <section class="doctor-section" id="doctor">
+        <div class="doctor-container">
+            <div class="doctor-left">
+                <img src="../../public/doctor.jpg" alt="Dr. Lakshmi" class="doctor-img">
+            </div>
+            <div class="doctor-right">
+                <h2 class="doctor-name">Dr. Lakshmi Prasad</h2>
+                <p class="doctor-about">BDS, MDS - Specialist in Cosmetic & Family Dentistry with 12+ years experience</p>
+                <!-- Reviews Carousel -->
+                <div class="reviews-carousel" id="doctor-reviews">
+                    <!-- Slides populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blogs Gallery -->
+    <section class="blogs-gallery">
+        <div class="blogs-container">
+            <!-- Main blog tile -->
+            <div class="blog-main-tile" id="blog-main-tile">
+                <!-- Populated by JS -->
+            </div>
+            <!-- Horizontal blog list -->
+            <div class="blog-list" id="blog-list">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="reviews-left" id="main-reviews">
+            <!-- Reviews slider -->
+        </div>
+        <div class="reviews-right">
+            <button class="google-btn" onclick="window.open('https://g.page/r/CEXAMPLE', '_blank')">
+                Show on Google
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <h3>Book your appointment now!</h3>
+            <button class="footer-cta" onclick="window.location.href='book.html'">Book Now</button>
+        </div>
+        <div class="footer-social">
+            <span>Follow us!</span>
+            <a class="social-btn" href="https://instagram.com/" target="_blank">Instagram</a>
+            <a class="social-btn" href="https://youtube.com/" target="_blank">YouTube</a>
+            <a class="social-btn" href="https://g.page/r/CEXAMPLE" target="_blank">Google</a>
+        </div>
+        <div class="footer-bottom">© 2024 Vijaya Lakshmi Dental Clinic</div>
+    </footer>
+
+    <!-- Floating Book Button -->
+    <div id="book-float-btn" onclick="window.location.href='book.html'" title="Book Appointment">
+        <span>🗓️</span>
+    </div>
+
+    <script src="../scripts/main.js"></script>
+</body>
+</html>
